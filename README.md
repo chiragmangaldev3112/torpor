@@ -101,6 +101,21 @@ npm start
 Your own inbox file is a JSON array of `{ "from", "subject", "body" }`
 objects — see `sample-data/inbox.json` for the shape.
 
+### Using a different model
+
+Nothing here is tied to one vendor. Set `TORPOR_CHAT_MODEL` to any chat
+model you've pulled — for example, [Gemma](https://ollama.com/library/gemma3):
+
+```
+ollama pull gemma3
+TORPOR_CHAT_MODEL=gemma3 npm start
+```
+
+Tested and working — Gemma 3 answers correctly for both the digest and the
+`ask`/`search` commands. One honest difference: where `qwen3:8b` writes
+flowing prose, Gemma 3 tends to format its answer as a numbered list even
+when asked for short sentences. Still accurate, just a different style.
+
 ## Why local, open-weight models — not a cloud API
 
 - **Runs with no internet and no API key.** The whole pipeline — embeddings
