@@ -24,6 +24,38 @@ into when there's no reason to spend effort. Built for
 No step calls out to the internet. No API key exists anywhere in this
 project because none is needed.
 
+## It can also answer questions about a codebase
+
+Torpor also has a small local knowledge-bot mode: point it at any folder and
+ask it a question in plain English.
+
+```
+$ node src/index.mjs ask src "how does torpor decide which messages need attention?"
+
+Torpor decides which messages need attention by using a scoring system based
+on statistical thresholds. The `splitByAttention` function [5] calculates the
+mean and standard deviation of attention scores for all messages. It then
+sets a threshold at the mean plus 0.5 times the standard deviation...
+
+From:
+  [1] index.mjs:97
+  [2] index.mjs:65
+  [3] digest.mjs:65
+  [4] index.mjs:33
+  [5] digest.mjs:33
+```
+
+It works the same way as the inbox digest: every file is chunked, embedded
+locally, ranked by similarity to your question, and handed to the local chat
+model with instructions to answer only from those excerpts and cite which
+one each claim came from. Nothing here is specific to code — point it at a
+folder of docs, notes, or anything else text-based.
+
+```
+node src/index.mjs search <folder> <question>   # just the ranked matches
+node src/index.mjs ask <folder> <question>       # a cited answer
+```
+
 ## Demo
 
 ```
