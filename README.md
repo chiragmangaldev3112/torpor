@@ -1,4 +1,4 @@
-# torpor
+# Torpor
 
 A lazy, fully-local overnight inbox digest. Point it at your messages, and
 instead of reading all of them yourself, it reads them for you — entirely on
