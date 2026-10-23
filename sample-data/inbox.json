@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "from": "priya@example.com",
+    "subject": "Quarterly numbers due",
+    "body": "Can you send the Q3 numbers over before the board call tomorrow morning? It's the last thing I'm waiting on."
+  },
+  {
+    "id": 2,
+    "from": "billing@vendor-example.com",
+    "subject": "Invoice #4471 overdue",
+    "body": "Your payment of $3,200 is 10 days overdue. Please settle this by end of day to avoid a service interruption."
+  },
+  {
+    "id": 3,
+    "from": "newsletter@digest-example.com",
+    "subject": "This week in design",
+    "body": "Five articles on spacing systems and one on color theory. Unsubscribe anytime."
+  },
+  {
+    "id": 4,
+    "from": "sam@example.com",
+    "subject": "lol",
+    "body": "did you see the game last night, what a finish"
+  },
+  {
+    "id": 5,
+    "from": "ops@example.com",
+    "subject": "Production deploy failing",
+    "body": "The 2am deploy to production failed on the database migration step. Nobody has looked at it yet."
+  },
+  {
+    "id": 6,
+    "from": "ci@example.com",
+    "subject": "Build #881 passed",
+    "body": "main branch build passed in 4m12s. No action needed."
+  },
+  {
+    "id": 7,
+    "from": "legal@example.com",
+    "subject": "NDA needs your signature",
+    "body": "The partner NDA is ready. We need a signature before Friday's kickoff call or we'll have to push the start date."
+  },
+  {
+    "id": 8,
+    "from": "friend@example.com",
+    "subject": "lunch next week?",
+    "body": "No rush, just wondering if you're free for lunch sometime next week."
+  },
+  {
+    "id": 9,
+    "from": "security-alert@example.com",
+    "subject": "New sign-in detected",
+    "body": "A new sign-in to your account was detected from an unrecognized device. If this wasn't you, reset your password immediately."
+  },
+  {
+    "id": 10,
+    "from": "updates@tool-example.com",
+    "subject": "What's new this month",
+    "body": "We shipped three small improvements and fixed a handful of bugs. Full changelog linked below."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "name": "torpor",
+  "version": "0.1.0",
+  "description": "A lazy, fully-local overnight inbox digest. Reads your messages while you slept and hands you three sentences, using only local open-weight models via Ollama.",
+  "type": "module",
+  "main": "src/index.mjs",
+  "bin": {
+    "torpor": "src/index.mjs"
+  },
+  "scripts": {
+    "start": "node src/index.mjs sample-data/inbox.json"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
