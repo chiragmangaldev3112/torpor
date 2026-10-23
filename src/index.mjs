@@ -12,32 +12,32 @@ async function main() {
 
   const status = await checkAvailable();
   if (!status.ok) {
-    console.error(`torpor needs a local Ollama running: ${status.reason}`);
+    console.error(`torpor can't wake up: ${status.reason}`);
     process.exit(1);
   }
 
   const raw = await readFile(file, 'utf8');
   const messages = JSON.parse(raw);
 
-  console.log(`torpor: ${messages.length} messages, scoring locally with ${status.embedModel}...`);
+  console.log(`torpor: barely awake. ${messages.length} message${messages.length === 1 ? '' : 's'} to get through, so I'll do it.`);
   const scored = await scoreInbox(messages);
   const { needsYou, fyi } = splitByAttention(scored);
 
-  console.log(`\nWhile you were away: ${messages.length} messages, ${needsYou.length} need you, ${fyi.length} can wait.\n`);
+  console.log(`\nWhile you were asleep: ${needsYou.length} of ${messages.length} actually need you. The other ${fyi.length} can wait.\n`);
 
-  console.log(`Summary (${status.chatModel}, local):`);
+  console.log(`In short (${status.chatModel}, running right here):`);
   const prompt = buildNarrationPrompt({ needsYou, fyi });
   const summary = await chat(prompt);
   console.log(summary.trim());
 
   if (needsYou.length) {
-    console.log('\nNeeds you:');
+    console.log('\nWorth getting up for:');
     for (const m of needsYou) {
       console.log(`  [${m.attentionScore.toFixed(2)}] ${m.from} — ${m.subject}`);
     }
   }
   if (fyi.length) {
-    console.log('\nFYI, no action needed:');
+    console.log('\nCan stay asleep for these:');
     for (const m of fyi) {
       console.log(`  [${m.attentionScore.toFixed(2)}] ${m.from} — ${m.subject}`);
     }
@@ -45,6 +45,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error('torpor failed:', err.message);
+  console.error('torpor dozed off mid-task:', err.message);
   process.exit(1);
 });

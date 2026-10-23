@@ -31,21 +31,22 @@ $ ollama pull qwen3:8b
 $ ollama pull nomic-embed-text
 $ npm start
 
-torpor: 10 messages, scoring locally with nomic-embed-text...
+torpor: barely awake. 10 messages to get through, so I'll do it.
 
-While you were away: 10 messages, 3 need you, 7 can wait.
+While you were asleep: 3 of 10 actually need you. The other 7 can wait.
 
-Summary (qwen3:8b, local):
-Sign the partner NDA by Friday to avoid delaying the kickoff call. Settle
-invoice #4471 for $3,200 by EOD to prevent service interruption. Production
-deploy failed due to a database migration error; no one has addressed it yet.
+In short (qwen3:8b, running right here):
+The partner NDA requires your signature by Friday's kickoff call to avoid
+delaying the start date. An overdue $3,200 invoice could trigger a service
+interruption if not resolved by end of day. A critical production deploy
+failed during database migration and remains unaddressed.
 
-Needs you:
+Worth getting up for:
   [0.64] legal@example.com — NDA needs your signature
   [0.59] billing@vendor-example.com — Invoice #4471 overdue
   [0.58] ops@example.com — Production deploy failing
 
-FYI, no action needed:
+Can stay asleep for these:
   [0.57] friend@example.com — lunch next week?
   [0.56] priya@example.com — Quarterly numbers due
   [0.55] security-alert@example.com — New sign-in detected
